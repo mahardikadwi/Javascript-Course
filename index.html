@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Javascript Projects</title>
+  </head>
+  <body>
+      <p id="welcome-msg"></p>
+      <div class="projects-grid">
+        <div class="box">
+          <!-- Passenger Counter -->
+          <h1>People Entered:</h1>
+          <h2 id="counter">0</h2>
+          <div>
+            <button id="increment-btn" onclick="increment()">increment</button>
+            <button id="save-btn" onclick="save()">Save data</button>
+            <button id="dontclick-btn" onclick="dontClick()">Don't click this!</button>
+            <p id="error"></p>
+          </div>
+          <p id="entry-data">Previous Entries: </p>
+        </div>
+        <div class="box">
+          <!-- Simple Calculator -->
+          <span id="digit1"></span>
+          <span id="digit2"></span>
+          <br>
+          <button onclick="add()">Add</button>
+          <button onclick="subtract()">Subtract</button>
+          <button onclick="divide()">Divide</button>
+          <button onclick="multiply()">Multiply</button>
+          <br>
+          <span id="hasil">Total: </span>
+        </div>
+        <div class="box blackjack-container">
+          <!-- Blackjack card game -->
+          <h1 class="heading">Blackjack</h1>
+          <h3 id="msg-confirm">Want to play a round?</h3>
+          <p class="bl-p" id="card-list">Cards:</p>
+          <p class="bl-p" id="sum-total">Total:</p>
+          <button class="game-btn" onclick="startGame()">Start the Game</button>
+          <button class="game-btn" onclick="newCard()">Draw new Card</button>
+        </div>
+        <div class="box">
+          <p id="greeting-msg"></p>
+        </div>
+      </div>
+  </body>
+  <script src="js/main.js"></script>
+</html>

@@ -116,14 +116,21 @@ function multiply() {
 }
 
 // blackjack card game
+let player = {
+  name: "Dwi",
+  chips: 200
+}
 let cards = []; // default state
-let total = 0;  // default state
+let total = 0; // default state
 let hasBlackJack = false;
 let isAlive = false;
 let message = " ";
 let msgConfirm = document.getElementById("msg-confirm");
 let totalSum = document.getElementById("sum-total");
 let cardList = document.getElementById("card-list");
+let playerStats = document.getElementById("player-stats");
+playerStats.textContent = player.name + ": $" + player.chips;
+
 
 function getRandomCard() {
   let RandomCard = Math.floor(Math.random() * 13) + 1;
@@ -165,11 +172,12 @@ function renderGame() {
 }
 
 function newCard() {
-  // console.log('Drawing new card from the deck');
-  let card = getRandomCard();
-  total += card;
-  cards.push(card); // adding new value to the end of an array.
-  renderGame();
+  if (isAlive === true && hasBlackJack === false) { // logical AND operator
+    let card = getRandomCard();
+    total += card;
+    cards.push(card); // adding new value to the end of an array.
+    renderGame();
+  }
 }
 
 // another if else example
@@ -182,15 +190,15 @@ if (umur < 21) {
 }
 
 // if else example pt.3
-let age = 90;
+// let age = 90;
 
-if (age < 100) {
-  console.log("You're not eligible for the birthday card");
-} else if (age === 100) {
-  console.log("Happy birthday!, Here's your birthday card");
-} else {
-  console.log("sorry, you have received one already!");
-}
+// if (age < 100) {
+//   console.log("You're not eligible for the birthday card");
+// } else if (age === 100) {
+//   console.log("Happy birthday!, Here's your birthday card");
+// } else {
+//   console.log("sorry, you have received one already!");
+// }
 
 // arrays
 let featuredPost = ["lorem1", "lorem2", "lorem3"];
@@ -244,7 +252,7 @@ let player1Time = 300;
 let player2Time = 350;
 
 function getFastestTime() {
-  if (player1Time < player2Time){
+  if (player1Time < player2Time) {
     return player1Time;
   } else if (player2Time < player1Time) {
     return player2Time;
@@ -264,10 +272,101 @@ let totalTime = totalRaceTime();
 // Math()
 // Math.random() = generates a number between 0 and 0.999 (or almost 1)
 // Math.floor() = removes the decimal in a number
-let randomNumber = Math.random()*6;
+let randomNumber = Math.random() * 6;
 let floorNumber = Math.floor(3.45632);
 
 function rollDadu() {
-  let dadu = Math.floor( Math.random()* 6) + 1;
+  let dadu = Math.floor(Math.random() * 6) + 1;
   return dadu;
 }
+
+// logical operator
+let hasCompletedCourse = true;
+let givesCertificate = true;
+
+if (hasCompletedCourse === true && givesCertificate === true) {
+  // logical AND Operator
+  generateCertificate();
+}
+
+function generateCertificate() {
+  console.log("generating certificate. Please wait.");
+}
+
+let hasSolvedChallenge = false;
+let hasHintsLeft = false;
+
+if (hasSolvedChallenge === false && hasHintsLeft === false) {
+  // logical AND Operator
+  showSolution();
+}
+
+function showSolution() {
+  console.log("Showing Solution....");
+}
+
+let likesDocumentaries = true;
+let likesStartups = false;
+
+if (likesDocumentaries === true || likesStartups === true) {
+  // logical OR Operator
+  recommendMovie();
+}
+
+function recommendMovie() {
+  console.log("Hey, check out this movie!");
+}
+
+
+// Object
+let castleListing = {
+  isAvailable: true,
+  castleName: "Neutschwanstein",
+  price: 1000,
+  tags: ["medieval", "europe"] // syntax key : value untuk object
+}
+
+console.log(castleListing.isAvailable);
+console.log(castleListing.castleName);
+
+// Object and Function exercise
+let person = {
+  name: "Dwi",
+  age: 21,
+  country: "Indonesia"
+}
+
+function logData() {
+  console.log(person.name + " is " + person.age + " years old and lives in " + person.country);
+}
+
+logData();
+
+// else if exercise
+let age = 15;
+
+if (age < 6) {
+  console.log('free');
+} else if (age < 18) {
+  console.log('child discount')
+} else if (age < 27) {
+  console.log('student discount');
+} else if (age < 67) {
+  console.log('full price');
+} else {
+  console.log('senior citizen discount');
+}
+
+// loops excercise
+let largeCountries = ["China", "USA", "India", "Indonesia", "Pakistan"];
+
+for (let i = 0; i < largeCountries.length; i++) {
+  console.log("- " + largeCountries[i]);
+}
+
+// add and remove item from an array exercise
+let smallCoutries = ["China", "Monaco", "Tuvalu", "Liechtenstein", "USA"];
+smallCoutries.shift();
+smallCoutries.pop();
+smallCoutries.push("Vatican City");
+smallCoutries.unshift("Maldives");

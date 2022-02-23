@@ -308,7 +308,7 @@ function showSolution() {
 let likesDocumentaries = true;
 let likesStartups = false;
 
-if (likesDocumentaries === true || likesStartups === true) {
+if (likesDocumentaries === true || likesStartups === true) { // OR operator works if one of the operand are true 
   // logical OR Operator
   recommendMovie();
 }
@@ -370,3 +370,30 @@ smallCoutries.shift();
 smallCoutries.pop();
 smallCoutries.push("Vatican City");
 smallCoutries.unshift("Maldives");
+
+let hands = ["rock", "paper", "scissor"];
+
+function getHands() {
+  let randomHand = Math.floor(Math.random() * 3);
+  return hands[randomHand];
+}
+
+console.log(getHands());
+
+let fruits = ["🍊", "🍎", "🍊", "🍎", "🍊"];
+let appleShelf = document.getElementById("apple-shelf");
+let orangeShelf = document.getElementById("orange-shelf");
+
+function fruitShelves() {
+  for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i] === "🍊") {
+      orangeShelf.textContent += "🍊";
+    } else if (fruits[i] === "🍎") {
+      appleShelf.textContent += "🍎";
+    }
+  }
+}
+
+fruitShelves();
+
+
